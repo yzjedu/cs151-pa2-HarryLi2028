@@ -1,33 +1,57 @@
-# Initial Design Document
-#### PLEASE! PLEASE! PLEASE! READ the [README.md](README.md) File carefully
-# 1) Set Balance value to 1000
-# 2) Prompt user to input D, W, V, or E
-# 3) while user does not enter D, W, V, or E
-#       A) prompt user to input a valid input between D, W, V, or E
-# 4) set user input to lowercase
-# 5) If user inputs equals "e"
-#       A) End program
-# 6) while user input equals "d"
-#       A) Prompt user to input a positive number up to the second decimal point on how much they want to deposit
-#       B) while user input is less than 0 or user input has more than 2 decimal points or is not a number
-#           a) Prompt user to input a positive number up to the second decimal point or 0 to return to the other actions
-#       C) Add user input to balance 
-#       D) Prompt user to input D, W, V, or E
-#       E) while user does not enter D, W, V, or E
-#           a) prompt user to input a valid input between D, W, V, or E
-#       F) set user input to lowercase
-# 7) while user input equals "w" 
-#       A) Prompt user input a negative number up to the second decimal point on how much they want to withdraw
-#       B) while user input is greater than 0 or user input has more than 2 decimal points or is not a number
-#           a) Prompt user input a negative number up to the second decimal point or enter 0 to return to other actions
-#       C) Add user input to balance 
-#       D) Prompt user to input D, W, V, or E
-#       E) while user does not enter D, W, V, or E
-#           a) prompt user to input a valid input between D, W, V, or E
-#       F) set user input to lowercase
-# 8) while user input equals "v"
-#       A) output user balance 
-#       B) Prompt user to input D, W, V, or E
-#       C) while user does not enter D, W, V, or E
-#           a) prompt user to input a valid input between D, W, V, or E
-#       D) set user input to lowercase
+# Final Design Document
+#### PLEASE! PLEASE! PLEASE! Complete all the NOs in the feedback document 
+# 1) Set player_1 to 0
+# 2) Set player_2 to 0
+# 3) Set player_3 to 0
+# 4) Store yes into repeat 
+# 5) While repeat equals yes
+#		A) Set total_sticks to a random number from 10 to 100
+#		B) While total_sticks are more than 0 
+#      		A) If total_sticks are more than 0
+#				a) Prompt player 1 to input a value from 1 to 3
+#				b) subtract the input of player 1 from total_sticks
+#				c) If total_stiks is less than or equal to 0
+#					a) add 1 to player_1 
+#      		B) If total_sticks are more than 0
+#				a) Prompt player 2 to input a value from 1 to 3
+#				b) subtract the input of player 2 from total_sticks
+#				c) If total_sticks is less than or equal to 0
+#					a) add 1 to player_2
+#      		C) If total_sticks are more than 0
+#				a) choose a random number from 1 to 3 for player 3
+#				b) subtract the random number generated from total_sticks
+#				c) If total_sticks is less than or equal to 0
+#					a) add 1 to player_3
+#		C) Output the losses of player_1, player_2, player_3
+#		D) Prompt user to input yes or no if they want to play again
+# 		E) While user does not input yes or no 
+#			A) Prompt user to input a valid input between yes or no
+# 		F) Set repeat to user input
+# 		G) Set repeat to lowercase
+# 		H) If repeat equals no 
+#			A) output 'thanks for playing!'0
+
+
+import random 
+
+player_1 = 0
+player_2 = 0
+player_3 = 0
+repeat = str(yes)
+
+while repeat == yes:
+    total_sticks = random.randint(10,100)
+    while total_sticks > 0:
+        if total_sticks > 0:
+            choice_1 = int(input('Choose a number between 1 and 3:'))
+            while choice_1 < 1 and choice_1 > 3:
+                choice_1 = int(input('Choose a number between 1 and 3:'))
+            total_sticks -= choice_1
+            if total_sticks <= 0:
+                player_1 += 1
+                print('player one has taken the last stick.')
+        if total_sticks > 0:
+            choice_2 = int(input('Choose a number between 1 and 3:'))
+            while choice_2 < 1 and choice_2 > 3:
+                choice_2 = int(input('Choose a number between 1 and 3:'))
+            total_sticks -= choice_2
