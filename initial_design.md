@@ -30,28 +30,3 @@
 # 		G) Set repeat to lowercase
 # 		H) If repeat equals no 
 #			A) output 'thanks for playing!'0
-
-
-import random 
-
-player_1 = 0
-player_2 = 0
-player_3 = 0
-repeat = str(yes)
-
-while repeat == yes:
-    total_sticks = random.randint(10,100)
-    while total_sticks > 0:
-        if total_sticks > 0:
-            choice_1 = int(input('Choose a number between 1 and 3:'))
-            while choice_1 < 1 and choice_1 > 3:
-                choice_1 = int(input('Choose a number between 1 and 3:'))
-            total_sticks -= choice_1
-            if total_sticks <= 0:
-                player_1 += 1
-                print('player one has taken the last stick.')
-        if total_sticks > 0:
-            choice_2 = int(input('Choose a number between 1 and 3:'))
-            while choice_2 < 1 and choice_2 > 3:
-                choice_2 = int(input('Choose a number between 1 and 3:'))
-            total_sticks -= choice_2
