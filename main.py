@@ -55,3 +55,5 @@ while repeat == 'yes':
     while repeat != 'no' and repeat != 'yes':
         repeat = input('Please enter yes or no: ').lower()
 
+    if repeat == 'no':
+        print('Thanks for playing!')
